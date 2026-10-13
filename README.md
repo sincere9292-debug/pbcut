@@ -3,14 +3,13 @@
 # PBCUT
 
 숏츠·릴스(세로), 유튜브 롱폼(가로), 광고·제품 영상을 만드는 맥용 무료 영상 편집기입니다.
-자동 자막, 무음 자르기, 원클릭 숏츠 같은 AI 기능이 인터넷 없이 내 맥에서 돌아갑니다.
+자동 자막, 보컬 분리, 얼굴 보정, 물체 추적 같은 AI 기능이 내 맥에서 돌아가고, 저작권 걱정 없는 음악·효과음이 들어 있습니다.
 
 ## 다운로드
 
 **[최신 버전 받기 (Releases)](../../releases/latest)** → `PBCUT-x.y.z-arm64.dmg`
 
-- Apple Silicon 맥(M1·M2·M3·M4 이상), macOS 12 이상
-- 인텔 맥은 지원하지 않습니다
+- Apple Silicon 맥(M1·M2·M3·M4 이상), macOS 12 이상. 인텔 맥은 지원하지 않습니다.
 
 ## 설치
 
@@ -18,27 +17,39 @@
 2. 처음 열 때 "확인되지 않은 개발자" 경고가 뜹니다(애플 유료 인증서로 서명하지 않은 앱이라 그렇습니다).
    - **시스템 설정 → 개인정보 보호 및 보안** 맨 아래에서 **그래도 열기**를 누르세요.
    - 또는 터미널에서 한 줄: `xattr -dr com.apple.quarantine /Applications/PBCUT.app`
-3. 처음 자동 자막을 만들 때 음성 인식 모델(약 870MB)을 한 번만 내려받습니다. 그 뒤로는 인터넷이 필요 없습니다.
+3. AI 모델과 음악은 처음 쓸 때 한 번만 내려받습니다(음성 인식 약 870MB · 번역 약 110MB · 보컬 분리 약 40MB · 곡당 약 4MB). 그 뒤로는 인터넷이 필요 없습니다.
 
-## 주요 기능
+## 기능
 
-- **타임라인 편집**: 여러 트랙, 자르기·분할·잔물결 삭제, 스냅, 키프레임(위치·크기·회전·투명도·볼륨·흐림), 실행 취소
-- **자동 자막**: 한국어 음성 인식 + 단어별 타이밍, 단어 하이라이트·카라오케 등 자막 스타일 16종, 문장 직접 수정
-- **원클릭 숏츠**: 세로 전환 → 무음 자르기 → 얼굴 따라가기 리프레임 → 자막 → 훅 제목 → 배경음 자동 줄이기
-- **오디오**: 볼륨 키프레임, 페이드, 잡음 제거, 음성 변조 8종, 한국어 TTS 내레이션, 배경음 자동 덕킹, -14 LUFS 음량 맞춤
-- **영상**: 전환 12종, 효과 12종, 필터 16종, 색 보정, 크로마키, AI 배경 제거, 속도·역재생, 자르기·뒤집기
-- **내보내기**: 720p~4K, 하드웨어 H.264, 9:16 · 16:9 · 1:1 · 4:5 · 3:4 · 21:9
+| 분야 | 기능 |
+|---|---|
+| 타임라인 | 여러 트랙, 분할·리플 삭제, Q/W 왼쪽·오른쪽 지우기, 스냅, 메인 트랙 자석, 연결(위 클립 함께 이동), 마커, 클립 묶기(컴파운드), 실행 취소 |
+| 키프레임 | 위치·크기·회전·투명도·볼륨·흐림, 움직임 곡선(일정·천천히 시작/끝·부드럽게·멈춤) |
+| 속도 | 배속 0.1~8x, 역재생, 속도 곡선(몽타주·히어로·불릿 타임 등 8종 + 직접 그리기), 정지 화면, 부드러운 슬로모션(광학 흐름) |
+| 화면 | 마스크 6종(선형·거울·원·사각·하트·별, 흐림·반전), 혼합 모드 16종, 크로마키, AI 배경 제거, 자르기·뒤집기, 반복 애니메이션 10종 |
+| 색 | 필터 35종, 밝기·대비·채도·색온도·비네팅·그레인, HSL 8색, 톤 곡선(RGB), 컬러 휠, LUT(.cube) 가져오기, 다른 클립 색 맞추기 |
+| 얼굴·조명 | 피부 매끈·밝게·치아 미백·입술 색·볼 터치(AI 얼굴 인식), 조명 다시 비추기 6종 |
+| 영상 처리 | 흔들림 보정, 모션 블러, 화질 향상, 2배 고해상도 변환, 깜빡임 제거, 장면 자동 나누기 |
+| 전환·효과 | 전환 25종, 효과 25종(라이트 릭·보케·눈·비·하트·필름 먼지·글리치·VHS 등) |
+| 텍스트 | 프리셋 16종, 한글 무료 글꼴 25종, 외곽선·박스·그림자·네온 빛, 글자 휘기, 등장·퇴장·반복 애니메이션, 스티커 60여 종 |
+| 자막 | 한국어 자동 자막(단어별 타이밍·말하는 단어 강조·핵심어 강조), 이중 자막(영어 번역 줄), SRT·LRC·TXT 내보내기, SRT 가져오기 |
+| AI 편집 | 원클릭 숏츠, 긴 영상에서 하이라이트 찾기, 무음 자르기, 군말(음·어) 지우기, 얼굴 따라 세로 리프레임, 물체 따라가기(트래킹), 비트 마커, 소리로 맞추기(멀티캠) |
+| 오디오 | 볼륨 키프레임·페이드, 잡음 제거, 음성 강화, **보컬 분리**(목소리/배경음), 음성 변조 8종, 배경음 자동 덕킹, -14 LUFS 음량 맞춤, 오디오 분리, 내레이션 녹음(대본 보기), 한국어 TTS |
+| 자료 | CC0 음악 129곡(6가지 분위기), 효과음 640개, 스타일 템플릿 10종, 화면 녹화 |
+| 내보내기 | MP4(H.264·HEVC) 720p~4K, GIF, MP3·M4A·WAV, 선택 구간만 내보내기 |
+| AI 생성(선택) | 문장→이미지·영상, 사진→움직이는 영상(Higgsfield 계정·크레딧 필요) |
 
 ## 알아 둘 점
 
-- 캡컷의 스톡 음원·스티커·템플릿 라이브러리는 없습니다. 음원과 소스는 직접 가져와 쓰세요.
-- 음성 인식은 가끔 틀립니다. 자막 탭에서 고치거나 자주 쓰는 용어를 인식 힌트 칸에 넣으면 줄어듭니다.
-- TTS는 맥에 깔린 한국어 목소리를 씁니다. 목소리가 없으면 시스템 설정 → 손쉬운 사용 → 읽기 및 말하기에서 받으세요.
-- AI 이미지·영상 생성 메뉴는 Higgsfield 계정과 CLI가 있어야 동작합니다(선택 기능).
+- 영어 번역은 내 맥에서 도는 작은 모델이라 초안 수준입니다. 번역 줄은 텍스트 속성에서 바로 고칠 수 있습니다.
+- 캡컷의 클라우드 기능(AI 아바타·립싱크·영상 더빙·대본으로 영상 만들기)과 수천 개의 템플릿·스티커 상점은 없습니다.
+- TTS 는 맥에 깔린 한국어 목소리를 씁니다. 없으면 시스템 설정 → 손쉬운 사용 → 읽기 및 말하기에서 받으세요.
 
-## 사용한 오픈소스
+## 저작권·사용한 오픈소스
 
-- [FFmpeg](https://ffmpeg.org) — GPL-3.0, 정적 빌드 출처 [martin-riedl.de](https://ffmpeg.martin-riedl.de) (소스·빌드 스크립트 공개)
-- [whisper.cpp](https://github.com/ggml-org/whisper.cpp) v1.9.1 (MIT), 모델 large-v3-turbo q8_0 · Silero VAD
-- [Electron](https://www.electronjs.org) (MIT), [MediaPipe](https://github.com/google-ai-edge/mediapipe) (Apache-2.0), [Mediabunny](https://mediabunny.dev) (MPL-2.0)
-- 글꼴: Pretendard, Black Han Sans, Gowun Batang (SIL OFL)
+- 음악: [HoliznaCC0](https://freemusicarchive.org/music/holiznacc0/) 곡 129개, 모두 CC0(곡마다 원본 페이지 확인, [목록](../../releases/tag/library-v1))
+- 효과음: [Kenney](https://kenney.nl) 오디오 팩(CC0) + PBCUT 자체 합성음
+- 글꼴: Pretendard, Noto Sans/Serif KR, 나눔 글꼴, Gothic A1, IBM Plex Sans KR, Black Han Sans, Do Hyeon, Jua 외(모두 SIL OFL)
+- [FFmpeg](https://ffmpeg.org) GPL-3.0(정적 빌드 [martin-riedl.de](https://ffmpeg.martin-riedl.de)) · [whisper.cpp](https://github.com/ggml-org/whisper.cpp) MIT · Silero VAD MIT
+- [MediaPipe](https://github.com/google-ai-edge/mediapipe) Apache-2.0 · [Spleeter](https://github.com/deezer/spleeter) MIT(ONNX 변환 [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)) · [Opus-MT ko-en](https://huggingface.co/Helsinki-NLP/opus-mt-ko-en) Apache-2.0
+- [Electron](https://www.electronjs.org) MIT · [ONNX Runtime](https://onnxruntime.ai) MIT · [Transformers.js](https://github.com/huggingface/transformers.js) Apache-2.0 · [Mediabunny](https://mediabunny.dev) MPL-2.0
