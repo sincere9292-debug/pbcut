@@ -7,7 +7,15 @@
 
 ## 다운로드
 
-**[최신 버전 받기 (Releases)](../../releases/latest)** → `PBCUT-x.y.z-arm64.dmg`
+**설치 페이지: https://sincere9292-debug.github.io/pbcut/** (이 주소를 공유하세요)
+
+가장 쉬운 방법 — 터미널에 한 줄(받기·설치·바탕화면 바로가기, 경고 없음):
+
+```
+curl -fsSL https://sincere9292-debug.github.io/pbcut/install.sh | bash
+```
+
+직접 받기: **[맥용 DMG (항상 최신)](https://github.com/sincere9292-debug/pbcut/releases/latest/download/PBCUT-mac-arm64.dmg)** · [모든 버전](../../releases)
 
 - Apple Silicon 맥(M1·M2·M3·M4 이상), macOS 12 이상. 인텔 맥은 지원하지 않습니다.
 
