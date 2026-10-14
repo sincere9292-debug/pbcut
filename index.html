@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PBCUT 설치</title>
+<meta name="description" content="PBCUT — 숏츠·롱폼·광고용 맥 무료 영상 편집기. 자동 자막, AI 더빙, AI 아바타, 립싱크까지 내 맥에서.">
+<meta property="og:title" content="PBCUT — 맥용 무료 영상 편집기">
+<meta property="og:description" content="자동 자막·AI 더빙·AI 아바타·립싱크·시선 교정. 저작권 걱정 없는 음악·스티커 포함. Apple Silicon 맥.">
+<meta property="og:image" content="https://raw.githubusercontent.com/sincere9292-debug/pbcut/main/icon.png">
+<link rel="icon" href="https://raw.githubusercontent.com/sincere9292-debug/pbcut/main/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f6f5f1; --card:#fff; --ink:#15171c; --mute:#5c6270; --line:#e3e1da; --accent:#c9972b; --navy:#16213b; --code:#f0eee8; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1117; --card:#171a22; --ink:#eceef3; --mute:#9aa1b0; --line:#262a35; --accent:#e0b04a; --navy:#e9edf7; --code:#1f232d; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:'Noto Sans KR', -apple-system, sans-serif; line-height:1.65; }
+  main { max-width:760px; margin:0 auto; padding:48px 16px 80px; }
+  header { display:flex; gap:18px; align-items:center; }
+  header img { width:76px; height:76px; border-radius:18px; }
+  h1 { font-size:34px; margin:0; letter-spacing:-0.5px; }
+  .sub { color:var(--mute); margin:4px 0 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; margin-top:22px; }
+  h2 { font-size:19px; margin:0 0 10px; }
+  .btn { display:inline-block; background:var(--accent); color:#16130b; font-weight:800; text-decoration:none; padding:14px 22px; border-radius:12px; font-size:17px; }
+  .btn:hover { filter:brightness(1.05); }
+  .meta { color:var(--mute); font-size:14px; margin-top:10px; }
+  .cmd { display:flex; gap:8px; align-items:stretch; margin-top:8px; }
+  code.line { flex:1; min-width:0; overflow-x:auto; white-space:nowrap; background:var(--code); border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:ui-monospace, Menlo, monospace; font-size:13.5px; }
+  button.copy { border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:10px; padding:0 14px; font:inherit; font-weight:600; cursor:pointer; white-space:nowrap; }
+  ol { padding-left:20px; margin:8px 0 0; } li { margin:6px 0; }
+  .tag { display:inline-block; font-size:12px; font-weight:700; background:var(--code); border:1px solid var(--line); border-radius:999px; padding:2px 10px; margin-left:6px; vertical-align:middle; }
+  ul.feat { columns:2; column-gap:24px; padding-left:18px; margin:6px 0 0; } ul.feat li { break-inside:avoid; }
+  @media (max-width:560px) { ul.feat { columns:1; } h1 { font-size:28px; } .cmd { flex-direction:column; } button.copy { padding:10px; } }
+  a { color:var(--accent); }
+  footer { color:var(--mute); font-size:13px; margin-top:28px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="https://raw.githubusercontent.com/sincere9292-debug/pbcut/main/icon.png" alt="PBCUT 아이콘">
+    <div>
+      <h1>PBCUT</h1>
+      <p class="sub">숏츠·롱폼·광고용 맥 무료 영상 편집기 — AI 기능이 내 맥에서 돌아갑니다</p>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>방법 1. 한 줄로 설치 <span class="tag">추천</span></h2>
+    <p style="margin:0">Spotlight(⌘+스페이스)에서 <b>터미널</b>을 열고 아래 줄을 붙여 넣은 뒤 Enter. 받기·설치·바탕화면 바로가기까지 자동이고, 「확인되지 않은 개발자」 경고도 뜨지 않습니다.</p>
+    <div class="cmd">
+      <code class="line" id="cmd">curl -fsSL https://sincere9292-debug.github.io/pbcut/install.sh | bash</code>
+      <button class="copy" data-target="cmd">복사</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>방법 2. 직접 받아서 설치</h2>
+    <a class="btn" href="https://github.com/sincere9292-debug/pbcut/releases/latest/download/PBCUT-mac-arm64.dmg">맥용 다운로드 (DMG)</a>
+    <p class="meta">약 340MB · Apple Silicon 맥(M1·M2·M3·M4 이상) · macOS 12 이상 · 인텔 맥 미지원</p>
+    <ol>
+      <li>받은 DMG를 열고 <b>PBCUT</b>을 <b>응용 프로그램</b> 폴더로 끌어 놓습니다.</li>
+      <li>처음 열 때 「확인되지 않은 개발자」 경고가 뜨면 <b>시스템 설정 → 개인정보 보호 및 보안</b> 맨 아래에서 <b>그래도 열기</b>를 누릅니다.<br>
+        <span class="meta">애플 유료 인증서로 서명하지 않은 무료 앱이라 뜨는 경고입니다.</span></li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>할 수 있는 것</h2>
+    <ul class="feat">
+      <li>한국어 자동 자막·단어 강조</li>
+      <li>자막 번역 13개 언어</li>
+      <li>AI 목소리 31개 언어·AI 더빙</li>
+      <li>AI 아바타(말하는 사진)·립싱크</li>
+      <li>AI 시선 교정·얼굴 보정</li>
+      <li>원클릭 숏츠·무음·군말 자르기</li>
+      <li>보컬 분리·잡음 제거</li>
+      <li>배경 제거·물체 추적·키프레임</li>
+      <li>템플릿 40·텍스트 50·스티커 2,000+</li>
+      <li>CC0 음악 129곡·효과음 640개</li>
+    </ul>
+    <p class="meta">AI 모델은 처음 쓸 때 한 번만 받습니다. 그 뒤로는 인터넷 없이 돌아갑니다. 들어 있는 자료는 모두 상업적 이용이 가능한 라이선스라 유튜브·틱톡·인스타그램에 올려도 됩니다(AI 목소리·아바타는 업로드 때 AI 표시 필요 — 앱이 안내합니다).</p>
+  </section>
+
+  <footer>
+    <a href="https://github.com/sincere9292-debug/pbcut/releases">모든 버전·변경 내역</a> · <a href="https://github.com/sincere9292-debug/pbcut#readme">사용한 오픈소스·라이선스</a>
+  </footer>
+</main>
+<script>
+  document.querySelectorAll('button.copy').forEach((b) => b.addEventListener('click', async () => {
+    const t = document.getElementById(b.dataset.target).textContent;
+    try { await navigator.clipboard.writeText(t); b.textContent = '복사됨'; } catch { b.textContent = '직접 선택해 복사'; }
+    setTimeout(() => (b.textContent = '복사'), 1800);
+  }));
+</script>
+</body>
+</html>
